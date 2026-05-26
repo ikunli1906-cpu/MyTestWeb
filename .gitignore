@@ -1,0 +1,21 @@
+# 依赖
+node_modules/
+package-lock.json
+yarn.lock
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统
+Thumbs.db
+.DS_Store
+
+# 日志
+*.log
+npm-debug.log*
+
+# 临时
+*.tmp

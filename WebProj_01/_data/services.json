@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "name": "网络安全服务",
+      "desc": "提供全面的网络安全评估、渗透测试、安全加固等服务，保障企业信息资产安全。",
+      "icon": "https://placehold.co/64x64/1a365d/ffffff?text=SEC"
+    },
+    {
+      "name": "企业信息化咨询",
+      "desc": "为企业提供数字化转型规划、IT架构设计、系统集成等全方位咨询服务。",
+      "icon": "https://placehold.co/64x64/2a4a7f/ffffff?text=IT"
+    },
+    {
+      "name": "云计算服务",
+      "desc": "提供公有云、私有云、混合云的整体解决方案，助力企业上云用云。",
+      "icon": "https://placehold.co/64x64/c9a84c/ffffff?text=CLOUD"
+    },
+    {
+      "name": "数据分析服务",
+      "desc": "基于大数据和AI技术，为企业提供数据采集、分析、可视化等一站式服务。",
+      "icon": "https://placehold.co/64x64/1a365d/ffffff?text=DATA"
+    },
+    {
+      "name": "系统集成服务",
+      "desc": "提供软硬件系统集成、网络工程、机房建设等一站式系统解决方案。",
+      "icon": "https://placehold.co/64x64/2a4a7f/ffffff?text=SYS"
+    },
+    {
+      "name": "运维支持服务",
+      "desc": "7x24小时IT运维支持，包括故障处理、性能优化、定期巡检等服务。",
+      "icon": "https://placehold.co/64x64/c9a84c/ffffff?text=OPS"
+    }
+  ]
+}

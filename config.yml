@@ -1,0 +1,47 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true   # 本地开发时可用
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "about"
+    label: "公司简介"
+    file: "_data/about.json"
+    fields:
+      - { label: "公司名称", name: "companyName", widget: "string", default: "某某科技有限公司" }
+      - { label: "公司简介", name: "description", widget: "text", default: "请输入公司简介..." }
+      - { label: "Hero 标题", name: "heroTitle", widget: "string", default: "专业 · 可信 · 创新" }
+      - { label: "Hero 副标题", name: "heroSubtitle", widget: "string", default: "致力于为客户提供最优质的产品与服务" }
+      - label: "发展历程"
+        name: "history"
+        widget: "list"
+        fields:
+          - { label: "年份", name: "year", widget: "string" }
+          - { label: "事件", name: "event", widget: "string" }
+
+  - name: "services"
+    label: "产品服务"
+    file: "_data/services.json"
+    fields:
+      - label: "服务列表"
+        name: "items"
+        widget: "list"
+        fields:
+          - { label: "服务名称", name: "name", widget: "string" }
+          - { label: "服务描述", name: "desc", widget: "text" }
+          - { label: "服务图标", name: "icon", widget: "image", required: false }
+
+  - name: "contact"
+    label: "联系信息"
+    file: "_data/contact.json"
+    fields:
+      - { label: "公司地址", name: "address", widget: "string", default: "北京市朝阳区xx路xx号" }
+      - { label: "联系电话", name: "phone", widget: "string", default: "010-xxxxxxxx" }
+      - { label: "电子邮箱", name: "email", widget: "string", default: "contact@example.com" }
+      - { label: "工作时间", name: "hours", widget: "string", default: "周一至周五 9:00-18:00" }
+      - { label: "地图经度", name: "lng", widget: "number", default: 116.397428, required: false }
+      - { label: "地图纬度", name: "lat", widget: "number", default: 39.90923, required: false }

@@ -1,0 +1,74 @@
+/* ============================================
+   响应式样式
+   ============================================ */
+
+/* ---------- 平板端 (768px - 1024px) ---------- */
+@media (max-width: 1024px) {
+  .features-grid     { grid-template-columns: repeat(2, 1fr); }
+  .services-grid,
+  .services-full-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid       { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- 手机端 (<768px) ---------- */
+@media (max-width: 768px) {
+  :root { --fs-heading: 26px; --fs-subheading: 18px; }
+
+  /* 导航 — 汉堡菜单 */
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: fixed; top: 0; right: -100%; width: 75%; max-width: 320px;
+    height: 100vh; background: var(--bg-white);
+    flex-direction: column; padding: 100px 32px 32px;
+    gap: 0; box-shadow: -4px 0 30px rgba(0,0,0,.1);
+    transition: right .35s ease-out; z-index: 999;
+  }
+  .nav-links.open { right: 0; }
+  .nav-links li   { width: 100%; border-bottom: 1px solid var(--bg-gray); }
+  .nav-links a    { display: block; padding: 16px 0; color: var(--text-dark) !important; font-size: 16px; }
+  .nav-links a.active { color: var(--primary-accent) !important; }
+
+  /* Hero */
+  .hero { min-height: 100svh; }
+  .hero-title   { font-size: 32px; }
+  .hero-subtitle { font-size: 16px; }
+  .hero-buttons  { flex-direction: column; align-items: center; }
+
+  /* 网格 → 单列 */
+  .about-preview-grid,
+  .about-detail-grid,
+  .contact-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-preview-grid   { gap: 32px; }
+  .about-detail-grid    { gap: 32px; }
+  .contact-grid         { gap: 40px; }
+
+  .features-grid        { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .services-grid,
+  .services-full-grid   { grid-template-columns: 1fr; }
+
+  /* 时间轴 — 单列 */
+  .timeline::before { left: 20px; }
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    width: 100%; margin-left: 0; padding: 0 0 36px 50px; text-align: left;
+  }
+  .timeline-dot,
+  .timeline-item:nth-child(even) .timeline-dot { left: 11px; right: auto; }
+
+  /* 页面横幅 */
+  .page-banner { height: 240px; }
+  .page-banner-content h1 { font-size: 32px; }
+
+  /* 页脚 */
+  .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
+/* ---------- 超小屏 (<480px) ---------- */
+@media (max-width: 480px) {
+  .features-grid { grid-template-columns: 1fr; }
+  .hero-title   { font-size: 26px; letter-spacing: 1px; }
+  .btn { padding: 12px 24px; font-size: 13px; }
+}

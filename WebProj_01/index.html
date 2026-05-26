@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>首页 - 金鹰陶瓷砖</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">&#9670;</span>
+        <span class="logo-text" id="navCompanyName">金鹰陶瓷砖</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">首页</a></li>
+        <li><a href="about.html">关于我们</a></li>
+        <li><a href="services.html">产品服务</a></li>
+        <li><a href="contact.html">联系我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero 区块 -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title" id="heroTitle">专业 · 可信 · 创新</h1>
+      <p class="hero-subtitle" id="heroSubtitle">致力于为客户提供最优质的产品与服务</p>
+      <div class="hero-buttons">
+        <a href="services.html" class="btn btn-primary">了解我们的服务</a>
+        <a href="contact.html" class="btn btn-outline">联系我们</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 公司简介预览 -->
+  <section class="section section-light" id="aboutPreview">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="aboutPreviewTitle">关于我们</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc" id="aboutPreviewDesc">金鹰陶瓷砖是广东创未来陶瓷有限公司旗下高端瓷砖品牌，公司坐落于拥有“南国陶都”美誉的、全国最大建筑陶瓷生产基地——广东省佛山市。</p>
+      </div>
+      <div class="about-preview-grid">
+        <div class="about-preview-text">
+          <p id="aboutPreviewContent">自成立以来，一直致力探寻科学和艺术之间的融合，为打造全新生活理念，营造舒适、轻奢的家居生活空间，对产品不断推陈出新，贯彻“返璞归真，自然至上”的产品体系，融合意大利设计精粹，结合设计美学，推出全新陶瓷新品。</p>
+          <a href="about.html" class="btn btn-primary" style="margin-top:1.5rem;display:inline-block;">了解更多</a>
+        </div>
+        <div class="about-preview-image">
+          <img src="public/images/Img_01.png" alt="关于我们" onerror="this.src='https://placehold.co/600x400/eee/999?text=About+Us'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 核心优势 -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" style="color:#fff">我们的优势</h2>
+        <div class="section-divider" style="background:#c9a84c"></div>
+      </div>
+      <div class="features-grid" id="featuresGrid">
+        <div class="feature-card">
+          <div class="feature-icon">&#9889;</div>
+          <h3>专业团队</h3>
+          <p>拥有经验丰富的专业团队，为客户提供优质服务</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#9733;</div>
+          <h3>优质服务</h3>
+          <p>以客户为中心，提供全方位优质服务体验</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#9745;</div>
+          <h3>可靠保障</h3>
+          <p>完善的服务保障体系，让客户无后顾之忧</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#9881;</div>
+          <h3>持续创新</h3>
+          <p>紧跟行业发展趋势，持续创新服务模式</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 服务预览 -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="servicesPreviewTitle">产品与服务</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">我们提供以下专业服务</p>
+      </div>
+      <div class="services-grid" id="servicesGrid">
+        <!-- 由 JS 动态渲染 -->
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="services.html" class="btn btn-primary">查看全部服务</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 id="footerCompanyName">金鹰陶瓷砖</h3>
+          <p id="footerDesc">金鹰陶瓷砖是广东创未来陶瓷有限公司旗下高端瓷砖品牌</p>
+        </div>
+        <div class="footer-col">
+          <h4>快速链接</h4>
+          <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="services.html">产品服务</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>联系信息</h4>
+          <p id="footerAddress">佛山市禅城区南庄镇华夏陶瓷博览城陶博大道20座</p>
+          <p id="footerPhone">400-0757-603</p>
+          <p id="footerEmail">2748574350@qq.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="footerYear"></span> <span id="footerCompanyName2">金鹰陶瓷砖</span> 版权所有</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cms-render.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

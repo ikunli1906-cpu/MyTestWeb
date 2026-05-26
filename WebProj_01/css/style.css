@@ -1,0 +1,362 @@
+/* ============================================
+   CSS 变量主题系统 — 专业商务稳重风格
+   ============================================ */
+
+:root {
+  /* 主色系 */
+  --primary-dark:   #1a365d;   /* 深蓝（主色） */
+  --primary-mid:     #2a4a7f;   /* 中蓝 */
+  --primary-accent:  #c9a84c;   /* 金色强调 */
+
+  /* 背景色 */
+  --bg-white:  #ffffff;
+  --bg-light:  #f7fafc;
+  --bg-gray:   #edf2f7;
+  --bg-dark:   #1a202c;
+
+  /* 文字色 */
+  --text-dark:  #1a202c;
+  --text-mid:   #4a5568;
+  --text-light: #ffffff;
+  --text-muted: #a0aec0;
+
+  /* 功能色 */
+  --success: #38a169;
+  --danger:  #e53e3e;
+  --warning: #ed8936;
+  --info:    #3182ce;
+
+  /* 字体 */
+  --font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: 700;
+  --font-subheading: 600;
+  --font-body: 400;
+
+  --fs-heading:   32px;
+  --fs-subheading: 20px;
+  --fs-body:       16px;
+  --fs-small:      14px;
+
+  /* 间距 */
+  --container-max: 1200px;
+  --section-padding: 80px 0;
+  --card-radius: 8px;
+  --btn-radius:  6px;
+}
+
+/* ============================================
+   Reset & Base
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--fs-body);
+  color: var(--text-dark);
+  line-height: 1.7;
+  background: var(--bg-white);
+}
+
+a { text-decoration: none; color: inherit; transition: color .25s; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================
+   导航栏
+   ============================================ */
+.navbar {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  background: transparent;
+  transition: background .35s, box-shadow .35s;
+}
+.navbar.scrolled {
+  background: rgba(255,255,255,.97);
+  box-shadow: 0 2px 20px rgba(0,0,0,.08);
+}
+.nav-container {
+  max-width: var(--container-max);
+  margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+.nav-logo { display: flex; align-items: center; gap: 8px; }
+.logo-icon { font-size: 28px; color: var(--primary-accent); }
+.logo-text { font-size: 22px; font-weight: 700; color: #000; }
+
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+  font-size: var(--fs-small); font-weight: var(--font-subheading);
+  color: #000; transition: color .25s;
+  position: relative; padding: 4px 0;
+}
+.navbar.scrolled .nav-links a { color: #000; }
+.nav-links a:hover,
+.nav-links a.active { color: var(--primary-accent); }
+.nav-links a.active::after {
+  content: ""; position: absolute; bottom: -2px; left: 0;
+  width: 100%; height: 2px; background: var(--primary-accent); border-radius: 1px;
+}
+
+/* 汉堡按钮 */
+.nav-toggle { display: none; flex-direction: column; gap: 5px; width: 28px; padding: 4px 0; }
+.nav-toggle span {
+  display: block; height: 2px; background: #fff; border-radius: 2px; transition: background .35s;
+}
+.navbar.scrolled .nav-toggle span { background: var(--text-dark); }
+
+/* ============================================
+   Hero 区块
+   ============================================ */
+.hero {
+  position: relative;
+  height: 100vh; min-height: 600px;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-mid) 60%, #1a365d 100%);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background: url("https://placehold.co/1920x1080/1a365d/2a4a7f?text=") center/cover no-repeat;
+  opacity: .12;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(201,168,76,.08) 0%, transparent 70%);
+}
+.hero-content {
+  position: relative; z-index: 2; text-align: center; color: #fff;
+  max-width: 800px; padding: 0 24px;
+}
+.hero-title {
+  font-size: 52px; font-weight: var(--font-heading);
+  margin-bottom: 20px; letter-spacing: 2px;
+  animation: fadeUp .8s ease-out;
+}
+.hero-subtitle {
+  font-size: 20px; color: rgba(255,255,255,.8);
+  margin-bottom: 40px; animation: fadeUp 1s ease-out;
+}
+.hero-buttons { display: flex; gap: 16px; justify-content: center; animation: fadeUp 1.2s ease-out; }
+
+/* ============================================
+   按钮
+   ============================================ */
+.btn {
+  display: inline-block;
+  padding: 14px 36px;
+  font-size: var(--fs-small); font-weight: var(--font-subheading);
+  border-radius: var(--btn-radius); transition: all .3s; cursor: pointer;
+}
+.btn-primary {
+  background: var(--primary-accent); color: #fff;
+  border: 2px solid var(--primary-accent);
+}
+.btn-primary:hover { background: #b8943e; border-color: #b8943e; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,.35); }
+.btn-outline {
+  background: transparent; color: #fff;
+  border: 2px solid rgba(255,255,255,.5);
+}
+.btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+
+/* ============================================
+   Section 通用
+   ============================================ */
+.section { padding: var(--section-padding); }
+.section-light { background: var(--bg-white); }
+.section-gray  { background: var(--bg-light); }
+.section-dark  { background: var(--primary-dark); color: #fff; }
+
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-title  { font-size: var(--fs-heading); font-weight: var(--font-heading); color: var(--text-dark); }
+.section-dark .section-title { color: #fff; }
+.section-divider {
+  width: 60px; height: 3px; background: var(--primary-accent);
+  margin: 16px auto 20px; border-radius: 2px;
+}
+.section-desc { font-size: var(--fs-small); color: var(--text-mid); max-width: 600px; margin: 0 auto; }
+.section-subtitle { font-size: 16px; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+.section-dark .section-desc { color: rgba(255,255,255,.7); }
+
+/* ============================================
+   首页 — 关于预览
+   ============================================ */
+.about-preview-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+}
+.about-preview-text p { color: var(--text-mid); line-height: 2; }
+.about-preview-image img { width: 100%; border-radius: var(--card-radius); box-shadow: 0 10px 40px rgba(0,0,0,.1); }
+
+/* ============================================
+   优势卡片
+   ============================================ */
+.features-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+}
+.feature-card {
+  text-align: center; padding: 40px 24px;
+  background: rgba(255,255,255,.06); border-radius: var(--card-radius);
+  border: 1px solid rgba(255,255,255,.08);
+  transition: transform .3s, box-shadow .3s;
+}
+.feature-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,.2); }
+.feature-icon { font-size: 40px; margin-bottom: 16px; color: var(--primary-accent); }
+.feature-card h3 { font-size: 18px; font-weight: var(--font-subheading); margin-bottom: 10px; }
+.feature-card p  { font-size: var(--fs-small); color: rgba(255,255,255,.7); line-height: 1.8; }
+
+/* ============================================
+   服务卡片（首页预览 + 服务页）
+   ============================================ */
+.services-grid, .services-full-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+}
+.service-card {
+  background: var(--bg-white);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,.06);
+  border: 1px solid var(--bg-gray);
+  transition: transform .3s, box-shadow .3s;
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,.12); }
+.service-card img {
+  width: 100%; height: 200px; object-fit: cover;
+  onerror: this.src='https://placehold.co/400x200/eee/999?text=Service';
+}
+.service-card-body { padding: 28px; }
+.service-card-body h3 { font-size: 18px; font-weight: var(--font-subheading); margin-bottom: 10px; color: var(--text-dark); }
+.service-card-body p  { font-size: var(--fs-small); color: var(--text-mid); line-height: 1.8; }
+
+/* ============================================
+   关于我们 — 详情
+   ============================================ */
+.about-detail-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+}
+.about-detail-image img { width: 100%; border-radius: var(--card-radius); box-shadow: 0 10px 40px rgba(0,0,0,.1); }
+.about-detail-text h2 { font-size: var(--fs-heading); font-weight: var(--font-heading); color: var(--text-dark); margin-bottom: 12px; }
+.about-detail-text p { color: var(--text-mid); line-height: 2; }
+
+/* ============================================
+   时间轴（发展历程）
+   ============================================ */
+.timeline { position: relative; max-width: 900px; margin: 0 auto; padding: 40px 0; }
+.timeline::before {
+  content: ""; position: absolute; left: 50%; top: 0; bottom: 0;
+  width: 2px; background: linear-gradient(to bottom, transparent, var(--primary-dark), var(--primary-dark), transparent);
+  transform: translateX(-50%);
+}
+.timeline-item {
+  position: relative; width: 50%; padding: 0 60px 60px 0; text-align: right;
+}
+.timeline-item:nth-child(even) { margin-left: 50%; padding: 0 0 60px 60px; text-align: left; }
+.timeline-dot {
+  position: absolute; top: 0; right: -11px;
+  width: 22px; height: 22px; background: var(--primary-accent);
+  border-radius: 50%; border: 4px solid var(--bg-white); box-shadow: 0 0 0 4px var(--primary-accent);
+  z-index: 2;
+}
+.timeline-item:nth-child(even) .timeline-dot { left: -11px; right: auto; }
+.timeline-year {
+  font-size: 36px; font-weight: 800; color: var(--primary-dark);
+  line-height: 1; margin-bottom: 10px;
+}
+.timeline-title {
+  font-size: 18px; font-weight: var(--font-subheading); color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.timeline-event { font-size: var(--fs-small); color: var(--text-mid); line-height: 1.8; }
+
+/* ============================================
+   联系我们
+   ============================================ */
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
+}
+.contact-info h2 { font-size: var(--fs-subheading); font-weight: var(--font-subheading); margin-bottom: 12px; }
+.contact-item { display: flex; gap: 16px; margin-top: 28px; }
+.contact-icon { font-size: 28px; color: var(--primary-accent); flex-shrink: 0; width: 44px; text-align: center; }
+.contact-item h4 { font-size: var(--fs-small); font-weight: var(--font-subheading); color: var(--text-dark); }
+.contact-item p  { font-size: var(--fs-small); color: var(--text-mid); margin-top: 4px; }
+
+/* 表单 */
+.contact-form-wrapper h2 { font-size: var(--fs-subheading); font-weight: var(--font-subheading); margin-bottom: 12px; }
+.form-group { margin-bottom: 18px; }
+.form-group input,
+.form-group textarea {
+  width: 100%; padding: 14px 16px;
+  border: 1px solid var(--bg-gray); border-radius: var(--btn-radius);
+  font-family: var(--font-family); font-size: var(--fs-small);
+  transition: border-color .25s, box-shadow .25s;
+  outline: none; resize: vertical;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-mid);
+  box-shadow: 0 0 0 3px rgba(42,74,127,.12);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text-muted); }
+
+/* ============================================
+   页脚
+   ============================================ */
+.footer { background: var(--bg-dark); color: rgba(255,255,255,.7); padding: 64px 0 0; }
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 48px;
+  padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.footer-col h3 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+.footer-col h4 { font-size: var(--fs-subheading); font-weight: var(--font-subheading); color: #fff; margin-bottom: 16px; }
+.footer-col p  { font-size: var(--fs-small); line-height: 2; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { font-size: var(--fs-small); color: rgba(255,255,255,.6); transition: color .25s; }
+.footer-col ul li a:hover { color: var(--primary-accent); }
+.footer-bottom { text-align: center; padding: 24px 0; font-size: var(--fs-small); color: rgba(255,255,255,.4); }
+
+/* ============================================
+   页面横幅（子页面）
+   ============================================ */
+.page-banner {
+  position: relative;
+  height: 320px; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-mid) 100%);
+  margin-top: 72px;
+}
+.page-banner-overlay {
+  position: absolute; inset: 0;
+  background: url("https://placehold.co/1920x400/1a365d/2a4a7f?text=") center/cover no-repeat; opacity: .1;
+}
+.page-banner-content { position: relative; z-index: 2; text-align: center; color: #fff; }
+.page-banner-content h1 { font-size: 42px; font-weight: var(--font-heading); margin-bottom: 12px; }
+.page-banner-content p  { font-size: var(--fs-small); color: rgba(255,255,255,.7); }
+.page-banner-content a  { color: var(--primary-accent); }
+
+/* ============================================
+   动画
+   ============================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ============================================
+   地图容器
+   ============================================ */
+#mapContainer { width: 100%; height: 450px; background: var(--bg-gray); }
+
+/* ============================================
+   响应式（详细在 responsive.css）
+   ============================================ */
